@@ -14,6 +14,7 @@ public class PetTest {
     Pet testPet;
     Dog testDog;
     Cat testCat;
+    Hamster testHamster;
 
 
     //Instantiate here
@@ -22,6 +23,7 @@ public class PetTest {
         testPet = new Pet();
         testDog = new Dog();
         testCat = new Cat();
+        testHamster = new Hamster();
     }
 
     @Test
@@ -35,6 +37,9 @@ public class PetTest {
     }
 
     @Test
+    public void givenAHamsterShouldHaveUniqueSpeakMethod() { assertEquals("Hamster should squeak", "Squeak~", testHamster.speak());}
+
+    @Test
     public void givenADogShouldSubclassPet(){
         assertThat(testDog, instanceOf(Pet.class));
     }
@@ -43,6 +48,9 @@ public class PetTest {
     public void givenACatShouldSubclassPet(){
         assertThat(testCat, instanceOf(Pet.class));
     }
+
+    @Test
+    public void givenAHamsterShouldSubclassPet(){ assertThat(testHamster, instanceOf(Pet.class));}
 
     @Test
     public void petHasNameProperty(){
